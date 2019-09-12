@@ -78,7 +78,7 @@ static void run_command(int ptm_fd, String command)
             args[1] = "-c";
             args[2] = command.characters();
         }
-        const char* envs[] = { "TERM=xterm", "PATH=/bin:/usr/bin:/usr/local/bin", nullptr };
+        const char* envs[] = { "TERM=xterm", "TMPDIR=/tmp", "PATH=/bin:/usr/bin:/usr/local/bin", nullptr };
         rc = execve("/bin/Shell", const_cast<char**>(args), const_cast<char**>(envs));
         if (rc < 0) {
             perror("execve");
