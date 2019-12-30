@@ -4,7 +4,10 @@
 
 __BEGIN_DECLS
 
-#define HUGE_VAL 1e10000
+#define HUGE_VAL __builtin_huge_val()
+#define INFINITY __builtin_inf()
+#define NAN __builtin_nan("")
+
 #define M_E 2.718281828459045
 #define M_PI 3.141592653589793
 #define M_PI_2 (M_PI / 2)
